@@ -1,0 +1,314 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Maraton_webAPI",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/Futok": {
+      "get": {
+        "tags": [
+          "Futok"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Futok"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Futok"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Futok"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Futok/{fid}/eredmenyek": {
+      "get": {
+        "tags": [
+          "Futok"
+        ],
+        "parameters": [
+          {
+            "name": "fid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Eredmenyek"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Eredmenyek"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Eredmenyek"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Futok/{fid}/eredmenyek/{kor}": {
+      "put": {
+        "tags": [
+          "Futok"
+        ],
+        "parameters": [
+          {
+            "name": "fid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "kor",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateEredmenyDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateEredmenyDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateEredmenyDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Futok/{fid}": {
+      "delete": {
+        "tags": [
+          "Futok"
+        ],
+        "parameters": [
+          {
+            "name": "fid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Futok/{fid}/potol/{kor}/{ido}": {
+      "post": {
+        "tags": [
+          "Futok"
+        ],
+        "parameters": [
+          {
+            "name": "fid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "kor",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "ido",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Futok/nok": {
+      "get": {
+        "tags": [
+          "Futok"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": { }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Eredmenyek": {
+        "type": "object",
+        "properties": {
+          "futo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "kor": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ido": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "futoNavigation": {
+            "$ref": "#/components/schemas/Futok"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Futok": {
+        "type": "object",
+        "properties": {
+          "fid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fnev": {
+            "type": "string",
+            "nullable": true
+          },
+          "szulev": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "szulho": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "csapat": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ffi": {
+            "type": "boolean"
+          },
+          "eredmenyeks": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Eredmenyek"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateEredmenyDto": {
+        "type": "object",
+        "properties": {
+          "ido": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

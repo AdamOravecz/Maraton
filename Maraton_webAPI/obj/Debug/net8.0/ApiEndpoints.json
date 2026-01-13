@@ -1,0 +1,136 @@
+[
+  {
+    "ContainingType": "Maraton_webAPI.Controllers.FutokController",
+    "Method": "GetFutok",
+    "RelativePath": "api/Futok",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Maraton_webAPI.Models.Futok, Maraton_webAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Maraton_webAPI.Controllers.FutokController",
+    "Method": "DeleteFuto",
+    "RelativePath": "api/Futok/{fid}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "fid",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Maraton_webAPI.Controllers.FutokController",
+    "Method": "GetFutoEredmenyek",
+    "RelativePath": "api/Futok/{fid}/eredmenyek",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "fid",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Maraton_webAPI.Models.Eredmenyek, Maraton_webAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Maraton_webAPI.Controllers.FutokController",
+    "Method": "UpdateEredmeny",
+    "RelativePath": "api/Futok/{fid}/eredmenyek/{kor}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "fid",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "kor",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "Maraton_webAPI.Controllers.FutokController\u002BUpdateEredmenyDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Maraton_webAPI.Controllers.FutokController",
+    "Method": "PotolEredmeny",
+    "RelativePath": "api/Futok/{fid}/potol/{kor}/{ido}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "fid",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "kor",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "ido",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Maraton_webAPI.Controllers.FutokController",
+    "Method": "GetNoiFutok",
+    "RelativePath": "api/Futok/nok",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  }
+]
